@@ -1,9 +1,32 @@
+#sudo: required
+dist: linux # Ubuntu 14.04 LTS
 language: python
-python:
-  # - "2.6"
-  - "2.7"
-  # - "3.2"
-  # - "3.5"
-  # - "3.5-dev"
-  # - "pypy"
-script: pytest
+matrix:
+ include:
+#  - python: "2.6"
+  - python: "2.7"
+#  - python: "3.2"
+#  - python: "3.3"
+  - python: "3.5"
+#  - python: "3.6-dev"
+#  - python: "nightly"
+ allow_failures:
+  - python: "3.5"
+#  - python: "3.6-dev"
+#  - python: "nightly"
+install: true # no installation
+#install: python setup.py install
+#install: "pip install -r requirements.txt"
+#script: pytest # or py.test for Python versions 3.5 and below
+#script: if [[ $TRAVIS_PYTHON_VERSION > 3.5 ]]; then pytest; else py.test; fi
+#script: echo foo # avoid any tests
+#script: pytest
+#script: nosetests
+script:
+ - python polygon.py
+notifications:
+ email:
+  recipients:
+   - robert.niemiec@smcebi.edu.pl
+  on_success: always # or always or change
+on_failure: always # or always or change
