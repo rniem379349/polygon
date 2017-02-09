@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import math
 
 def dist_calc(x, y):
@@ -9,13 +10,18 @@ def dist_calc(x, y):
     return math.sqrt(x_dist**2 + y_dist**2)
 
 
-def poly_area(midpt, vertex_num, vert_to_midpt_dist):
+def poly_area(midpt, vertex_num, circumradius):
+    """
+    This function calculates and returns the area of the specified polygon.
+    For more information on the program consult the readme file.
+    """
     area = 0
-    angle = 360.0/vertex_num
-    tri_area = 0.5 * vert_to_midpt_dist**2 * math.sin(math.radians(angle))
+    angle = 360.0/vertex_num # the interior angle of each triangle
+    tri_area = 0.5 * circumradius**2 * math.sin(math.radians(angle)) # calculate area of triangle using the side-angle-side formula
     for i in range(vertex_num):
-        area += tri_area
+        area += tri_area # add the areas of the triangles
     return area
 
-# print dist_calc([0,0],[1,1])
-print poly_area([0,0],3,5)
+
+print poly_area([0,0],4,23.25)
+print poly_area([0,0],7,0.68)
