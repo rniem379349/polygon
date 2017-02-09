@@ -8,3 +8,6 @@ This is a simple regular polygon area calculator, which takes three arguments:
 3) circumradius - this is the distance from the midpoint to any vertice of the polygon.
 The program divides the polygon into several equal triangles (as many as there are vertices), calculates their areas and adds them together,
 resulting in the area of the entire polygon.
+
+Required python libraries:
+- math

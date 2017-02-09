@@ -2,14 +2,6 @@
 
 import math
 
-def dist_calc(x, y):
-    x_dist = abs(x[0] - y[0])
-    y_dist = abs(x[1] - y[1])
-    print "x distance: ", x_dist
-    print "y distance: ", y_dist
-    return math.sqrt(x_dist**2 + y_dist**2)
-
-
 def poly_area(midpt, vertex_num, circumradius):
     """
     This function calculates and returns the area of the specified polygon.
@@ -20,8 +12,10 @@ def poly_area(midpt, vertex_num, circumradius):
     tri_area = 0.5 * circumradius**2 * math.sin(math.radians(angle)) # calculate area of triangle using the side-angle-side formula
     for i in range(vertex_num):
         area += tri_area # add the areas of the triangles
-    return area
+    return str(round(area,2))
 
-
-print poly_area([0,0],4,23.25)
-print poly_area([0,0],7,0.68)
+with open("polygon_tests.txt","w") as file:
+    file.write("Area for polygon with 4 vertices and a circumradius of 23.25: %s\n" % poly_area([0,0],4,23.25))
+    file.write("Area for polygon with 7 vertices and a circumradius of 0.68: %s\n" % poly_area([0,0],7,0.68))
+    file.write("Area for polygon with 3 vertices and a circumradius of 2.76: %s\n" % poly_area([0,0],3,2.76))
+    file.write("Area for polygon with 13 vertices and a circumradius of 9: %s\n" % poly_area([0,0],13,9))

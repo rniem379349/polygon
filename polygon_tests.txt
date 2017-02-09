@@ -1,0 +1,4 @@
+Area for polygon with 4 vertices and a circumradius of 23.25: 1081.13
+Area for polygon with 7 vertices and a circumradius of 0.68: 1.27
+Area for polygon with 3 vertices and a circumradius of 2.76: 9.9
+Area for polygon with 13 vertices and a circumradius of 9: 244.68
