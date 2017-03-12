@@ -19,3 +19,5 @@ resulting in the area of the entire polygon.
 
 Required python libraries:
 - math
+
+Designed to run on python 2.x.
